@@ -6,7 +6,7 @@ channel = connection.channel()
 
 channel.exchange_declare(exchange='person', exchange_type='fanout')
 
-message = ''.join(sys.argv[1:]) or "ss4878"
+message = ''.join(sys.argv[1:]) or "from me"
 channel.basic_publish(exchange='person', routing_key='', body=message)
 
 print(" [x] sent %r" % message)
